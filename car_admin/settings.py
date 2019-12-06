@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ckeditor',
     'app',
+    'car_admin',
 ]
 
 MIDDLEWARE = [

@@ -1,4 +1,6 @@
 from django.db import models
+from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 
 
 class Car(models.Model):
@@ -15,8 +17,10 @@ class Car(models.Model):
 class Review(models.Model):
     car = models.ForeignKey(Car, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
-    text = models.TextField()
+    text = RichTextUploadingField()
 
     def __str__(self):
         return str(self.car) + ' ' + self.title
+
+
 

@@ -14,12 +14,16 @@ class CarAdmin(admin.ModelAdmin):
 
 
 class ReviewAdmin(admin.ModelAdmin):
-    list_display = ('машина', 'title',)
+    list_display = ('carview', 'title',)
     list_filter = ('title',)
     search_fields = ('title',)
+    ordering = ('-id',)
     form = ReviewAdminForm
-    def машина(self, obj):
+    def carview(self, obj):
         return obj.car
+    carview.short_description = 'Машина'
+
+
 
 
 admin.site.register(Car, CarAdmin)
